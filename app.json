@@ -1,17 +1,23 @@
 {
   "expo": {
-    "name": "trybe",
+    "name": "Trybe360",
     "slug": "trybe",
     "version": "1.0.0",
     "orientation": "portrait",
+    "scheme": "trybe360",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rccgnyaya.trybe360",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
+      "package": "com.rccgnyaya.trybe360",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#FFFFFF",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -20,6 +26,45 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash/splash-logo.png",
+          "imageWidth": 220,
+          "resizeMode": "contain",
+          "backgroundColor": "#FAFAFA"
+        }
+      ],
+      "expo-secure-store",
+      "expo-web-browser",
+      [
+        "expo-calendar",
+        {
+          "writeOnlyAccess": true,
+          "writeOnlyCalendarPermission": "Trybe360 adds programmes you register for to your calendar."
+        }
+      ],
+      "expo-image",
+      "./plugins/with-browser-queries"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "7a41fc4d-70a4-418b-89e7-f5b952d7519a"
+      }
+    },
+    "owner": "iwari"
   }
 }
